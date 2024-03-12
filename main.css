@@ -1,0 +1,232 @@
+:root{
+    --main-color: #f44336;
+}
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #ddd;
+}
+.game-guess {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .game-guess {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .game-guess {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .game-guess {
+        width: 1170px;
+    }
+}
+h1 {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+.game-guess{
+    margin: 0px auto 25px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .guess-area{
+            .inputs {
+                >div {
+                    margin-bottom: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span {
+                        font-size: 30px;
+                        margin-right: 15px;
+                        font-weight: bold;
+                    }
+                }
+                .disabled-inputs {
+                    opacity: 0.5;
+                    pointer-events: none;
+                }
+
+                input {
+                    margin: 0 5px;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    font-size: 50px;
+                    caret-color: var(--main-color);
+                    background: white;
+                    border: none;
+                    border-bottom: 3px solid #333;
+                
+                    &:focus {
+                        outline-color: #ccc;
+                    }
+                
+                    &.yes-in-place {
+                        background-color: #18ba89;
+                        border: #18ba89;
+                        color: white;
+                    }
+                
+                    &.not-in-place {
+                        background-color: #f89e13;
+                        border: #f89e13;
+                        color: white;
+                    }
+                
+                    &.no {
+                        background-color: #27303f;
+                        border: #27303f;
+                        color: white;
+                    }
+                }
+
+            }
+            .control {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 500px;
+                margin: 30px auto;
+                gap: 10px;
+        
+                .check {
+                    background-color: var(--main-color);
+                    flex: 1;
+                }
+            
+                .hint {
+                    background-color: #009688;
+                    width: fit-content;
+                }
+                .again {
+                    background-color: #27303f;
+                    width: fit-content;
+                }
+            
+                button {
+                    border: none;
+                    font-size: 25px;
+                    padding: 15px 20px;
+                    border-radius: 6px;
+                    color: white;
+                    cursor: pointer;
+                    font-weight: bold;
+                    &:disabled {
+                        background-color: black;
+                        opacity: 0.4;
+                        cursor: no-drop;
+                    }
+                }
+            }
+    }
+    .key-colors{
+        h2{
+            margin-bottom: 20px;
+        }
+        .key-color{
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+            background-color: #fff;
+            .key {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                margin-right: 15px;
+                &.yes-in-place{
+                    background-color: #18ba89;
+                }
+                &.not-in-place{
+                    background-color: #f89e13;
+                }
+                &.no{
+                    background-color: #27303f;
+                }
+            }
+            .key-text{
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+.message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+
+    span {
+        font-weight: bold;
+        display: block;
+        font-size: 50px;
+        color: var(--main-color);
+        text-transform: capitalize;
+        margin: 10px 0px 20px;
+    }
+
+    p {
+        margin-top: 15px;
+    }
+}
+footer{
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* media */
+@media (max-width: 992px) {
+    .game-guess {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .key-colors{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .game-guess .guess-area .inputs input{
+        width: 30px;
+        height: 30px;
+        font-size: 25px;
+    }
+    .game-guess .guess-area .inputs>div{
+        font-size: 20px;
+    }
+    .control{
+        flex-direction: column;
+    }
+}
